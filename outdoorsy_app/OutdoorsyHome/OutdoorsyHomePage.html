@@ -1,0 +1,45 @@
+<div id="homePageMain">
+	<div class="homePageContainer">
+		<div class="autoPlay">
+			<video autoplay loop muted id="home-video"> 
+				<source src="../OutdoorsyHome/staticfiles/homepage-vid.mp4" type="video/mp4">
+			</video>
+		</div>
+		
+		<div class="getStarted">
+			<div class="appName">
+				<img src="../OutdoorsyHome/staticfiles/outdoorsyHomePageLogo.png"/>
+			</div>
+			<div class="appSlogan">
+				<label >
+					Not All Who Wander Are Lost.
+				</label>
+			</div>
+			<div>&nbsp;</div>
+
+			<div class = "row locationInput">
+				<div class="col-md-10">
+				    <div class="input-group add-on">
+				    	<span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
+				    	<input class="form-control" 
+				      			placeholder="Enter City or Postal Code" 
+				      		 	type="text"
+				      		 	id="locationAutoComplete"
+				      		 	ng-model="userPostalAddress">
+				      	<div class="input-group-btn">
+			        		<button class="btn btn-default" type="submit" ng-click="getUserLocation();" title="Your Current Location">
+				        		<i class="fa fa-dot-circle-o fa-fw"></i>
+				        	</button>
+				      	</div>
+				    </div>
+				</div>
+
+				<div class="col-md-2">
+					<button class="btn btn-primary getStartedBtn" ng-click="getGeoCodes(); ">
+						<span class="fa fa-flag-checkered">&nbsp;&nbsp;</span>Get Started
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

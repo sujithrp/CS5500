@@ -1,0 +1,226 @@
+<div class="eventsDetails container well" id="eventsPage">
+	<table class="table table-condensed table-responsive eventDetailsTable">
+		<thead>
+			<th>
+				<div class="eventName">
+					<p>
+						<i class="fa fa-star userRatingLikeIcon" 
+						   ng-show="userHasLikedThisEvent"
+						   title="You have liked this event">
+						</i>
+						<i class="fa fa-frown-o userRatingDislikeIcon" 
+						   ng-show="userHasDislikedThisEvent"
+						   title="You have disliked this event">
+						</i>
+						{{selectedEvent.name.text}}
+					</p>
+				</div>
+				<div class="eventAddr"> 
+					<p>
+						{{selectedEvent.venue.name}},</br>
+						{{selectedEvent.venue.address.address_1}},</br>
+						{{selectedEvent.venue.address.city}},
+						{{selectedEvent.venue.address.region}} - {{selectedEvent.venue.address.postal_code}}</br>
+					</p>
+					<div class="fbShare">
+						<!-- <a class="btn btn-primary" 
+						   href="https://www.facebook.com/sharer/sharer.php?u={{selectedEvent.url}}"
+						   target="_blank"> -->
+					    <a class="btn btn-primary"
+					       href="https://www.facebook.com/sharer/sharer.php?u={{selectedEvent.url}}" 
+					       onclick="window.open(this.href, 'Outdoorsy - Share Event','left=20,top=20,width=900,height=400,toolbar=1,resizable=0');return false;">
+							<span class="fa fa-facebook fa-2x"></span>&nbsp;Share Event
+						</a>
+					</div>
+					<table class="table table-striped timings">
+						<thead>
+							<th>Starts</th>
+							<th>Ends</th>
+						</thead>
+						<tbody>
+							<tr class="info">
+								<td ng-show="selectedEvent.start">
+									{{selectedEvent.start.local |  date:"MM/dd/yyyy @ h:mma"}}
+								</td>
+								<td ng-show="selectedEvent.end">
+									{{selectedEvent.end.local |  date:"MM/dd/yyyy @ h:mma"}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="eventLikes">
+					<span id="likeBtn" ng-click="rateEvent(true)" class="fa fa-thumbs-up fa-2x" title="Awesome event!">
+						({{numberOfLikes}})
+					</span>
+					<span id="unLikeBtn" ng-click="rateEvent(false)" class="fa fa-thumbs-down fa-2x" title="I hate events like these!">
+						({{numberOfDislikes}})
+					</span>
+				</div>
+			</th>
+			<th>
+				<div class="eventLogo">
+					<img ng-show="selectedEvent.logo" src="{{selectedEvent.logo.url}}"/>
+					<img ng-hide="selectedEvent.logo" src="../OutdoorsyEvents/staticfiles/nologo.png"/>
+				</div>
+			</th>
+		</thead>
+	</table>
+</div>
+
+<div class="container well eventDesc">
+	<h4><span class="fa fa-info-circle fa-2x"></span> Event Details</h4>
+	<p id="desc"></p>
+</div>
+
+<div class="container well commentsSection">
+	<h4><i class="fa fa-comments fa-2x"></i>&nbsp; User Reviews</h4>
+	<table class="table commentsTable" ng-show="currentUser">
+		<tbody>
+			<!-- each row should display 1) User Name 2) User Comment 3) Date Of Comment 4) option to delete comment-->
+			<tr ng-show="allReviews.length>0" ng-repeat = "eachReview in allReviews">
+				<td>
+					<div ng-repeat = "eachComment in eachReview.userReviews" class="row well container displayComments">
+						<div class="col-md-11">
+							<div class="commentsDiv">
+								<span id = "commentBy"> {{eachComment.commentedBy}} on 
+									{{eachComment.commentDate | date:"MM/dd/yyyy @ h:mma"}} wrote </span>
+								<span id = "commentText"> "{{eachComment.comment}}" </span>
+							</div>
+						</div>
+						<div class="col-md-1">
+							<button class="btn btn-danger" 
+									ng-show="eachReview.userId == currentUser._id" 
+									ng-click="removeComment(eachReview, $index)">
+								<span class="fa fa-trash"></span>
+							</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="notLoggedInMessage" ng-hide="currentUser">
+		<p><i class="fa fa-sign-in"></i>&nbsp;Please sign-up or login to see and post reviews</p>
+	</div>
+
+	<div class="row commentsInputSection">
+		<div class="col-md-10">
+			<input id="commentInp" 
+			       class="form-control" 
+			       maxlength = "110"
+			       ng-show="currentUser" 
+			       ng-model="userReview" 
+			       type="text" 
+			       placeholder="Leave a comment here"/>
+
+			<input class="form-control" 
+			       ng-hide="currentUser" 
+			       disabled
+				   placeholder="Only registered users can post reviews"/>
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-success" ng-show="currentUser" ng-click="submitReview(userReview);">
+				<span class="fa fa-commenting-o"></span>&nbsp; Comment
+			</button>
+			<button class="btn btn-success" ng-hide="currentUser" disabled>
+				<span class="fa fa-commenting-o"></span>&nbsp; Comment
+			</button>
+		</div>
+	</div>
+</div>
+
+<div class="container" >
+	<div class="row">
+		<div class="col-md-7 ticketInfo well" >
+			<h4><span class="fa fa-ticket fa-2x"></span> Ticket Information</h4>
+			<table class="table table-responsive table-bordered" ng-show="selectedEvent.ticket_classes">
+				<thead class="ticketHeaders">
+					<th>Name</th>
+					<th>Cost</th>
+					<th>Fee</th>
+				</thead>
+				<tbody>
+					<tr class="info" ng-repeat="ticket in selectedEvent.ticket_classes">
+						<td>
+							<p>{{ticket.name}}</p>
+						</td>
+						<td>
+							<p ng-show="ticket.free">Free</p>
+							<p ng-show="ticket.donation">Dontations Accepted</p>
+							<p ng-hide="ticket.free || ticket.donation">{{ticket.cost.display}}</p>
+						</td>
+						<td>
+							<p ng-show="ticket.free || ticket.donation">N/A</p>
+							<p ng-show="ticket.fee">{{ticket.fee.display}}</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="bookBuyBtn" ng-show="selectedEvent.ticket_classes">
+				<a class="btn btn-warning" ng-href="{{selectedEvent.url}}" target="_blank">
+					<span class="fa fa-shopping-cart"></span>&nbsp;Plan My Reservations
+				</a>
+			</div>
+			<div class="noTicketInfo" ng-hide="selectedEvent.ticket_classes">
+				<h5>No ticket information available for this event.</h5>
+			</div>
+
+		</div>
+
+		<div class="col-md-1">&nbsp;</div>
+
+
+		<div class="col-md-4 showOnMaps well">
+			<h4><span class="fa fa-globe fa-2x"></span> Where On Earth?</h4>
+			<h5>Select a mode of transport to get the directions</h5>
+			<div class="row modes">
+				<div class="col-md-4" ng-show="currentUser && currentUser.preferences.modeOfTransport.length > 0" 
+									  ng-repeat="mode in currentUser.preferences.modeOfTransport">
+					<button class="btn btn-default" ng-click="setModeOfTransport(mode)">
+						<span id="{{mode}}" ng-show="mode == 'WALKING'" class="fa fa-male fa-2x"></span>
+						<span id="{{mode}}" ng-show="mode == 'DRIVING'" class="fa fa-car fa-2x"></span>
+						<span id="{{mode}}" ng-show="mode == 'TRANSIT'" class="fa fa-subway fa-2x"></span>
+					</button>
+				</div>
+			</div>
+			<div class="row modes" ng-hide="currentUser && currentUser.preferences.modeOfTransport.length > 0">
+					<div class="col-md-4" >
+						<button class="btn btn-default" ng-click="setModeOfTransport('WALKING')">
+							<span id="WALKING" class="fa fa-male fa-2x"></span>
+						</button>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-default" ng-click="setModeOfTransport('DRIVING')">
+							<span id="DRIVING" class="fa fa-car fa-2x"></span>
+						</button>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-default" ng-click="setModeOfTransport('TRANSIT')">
+							<span id="TRANSIT" class="fa fa-subway fa-2x"></span>
+						</button>
+					</div>
+				</div>
+			<div id="eventOnMap">
+
+			</div>
+		</div> 
+	</div>
+</div>
+
+<div class="container well eventOrg" ng-show="selectedEvent.organizer">
+	<h4><span class="fa fa-users fa-2x"></span> The Organizers</h4>
+	<div>
+		<img ng-show="selectedEvent.logo" ng-hide="selectedEvent.organizer.logo" src="{{selectedEvent.logo.url}}"/>
+		<img ng-show="selectedEvent.organizer.logo" src="{{selectedEvent.organizer.logo.url}}"/>
+	</div>
+	<div>
+		<p id="orgDesc"></p>
+	</div>
+	<div>
+		<a class="btn btn-success contactOrg" href="{{selectedEvent.organizer.url}}" target="_blank">
+			<span class="fa fa-eye"></span>&nbsp; Learn More About Them
+		</a>
+	</div>
+</div>

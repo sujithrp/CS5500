@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Outdoorsy App - Unit Tests Report</title>
+    <style type="text/css">html,body{font-family:Arial,sans-serif;margin:0;padding:0;}body{padding:10px 40px;}h1{margin-bottom:0;}h2{margin-top:0;color:#999;}table{width:100%;margin-top:20px;margin-bottom:20px;table-layout:fixed;}tr.header{background:#ddd;font-weight:bold;border-bottom:none;}td{padding:7px;border-top:none;border-left:1px black solid;border-bottom:1px black solid;border-right:none;word-break:break-all;word-wrap:break-word;}tr.pass td{color:#003b07;background:#86e191;}tr.skip td{color:#7d3a00;background:#ffd24a;}tr.fail td{color:#5e0e00;background:#ff9c8a;}tr:first-child td{border-top:1px black solid;}td:last-child{border-right:1px black solid;}tr.overview{font-weight:bold;color:#777;}tr.overview td{padding-bottom:0px;border-bottom:none;}tr.system-out td{color:#777;}hr{height:2px;margin:30px 0;background:#000;border:none;}</style>
+  </head>
+  <body>
+    <h1>Outdoorsy App</h1>
+    <h2>Unit Tests Report</h2>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr class="overview">
+        <td colspan="3" title="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36">Browser: Chrome 47.0.2526 (Mac OS X 10.11.1)</td>
+      </tr>
+      <tr class="overview">
+        <td colspan="3">Timestamp: 12/8/2015, 8:58:26 PM</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          73 tests / 
+          0 errors / 
+          0 failures / 
+          0 skipped / 
+          runtime: 0.701s
+        </td>
+      </tr>
+      <tr class="header">
+        <td>Status</td>
+        <td>Spec</td>
+        <td>Suite / Results</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.066s</td>
+        <td>Default latitude should be set to '42.338666' when controller is initialized</td>
+        <td>OutdoorsyHomePageController Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.013s</td>
+        <td>Default longitude should be set to '-71.092241' when controller is initialized</td>
+        <td>OutdoorsyHomePageController Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.01s</td>
+        <td>Default postal address should be set to '440 Huntington Avenue Boston MA' when controller is initialized</td>
+        <td>OutdoorsyHomePageController Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.011s</td>
+        <td>goToMapsUI method should route from home to maps view</td>
+        <td>OutdoorsyHomePageController Tests &raquo; goToMapsUI Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>User Postal Address and User Location Co-ordinates in rootScope should be undefined initially</td>
+        <td>OutdoorsyHomePageController Tests &raquo; getUserLocation Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.014s</td>
+        <td>getUserLocation should set Postal Address and User coordinates if user allows to share his location</td>
+        <td>OutdoorsyHomePageController Tests &raquo; getUserLocation Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.017s</td>
+        <td>openSignUpDialog should close the login dialog with an action that will eventually toggle signUp Dialog</td>
+        <td>Outdoorsy Login Controller Test Suites &raquo; Open Sign Up Dialog Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.01s</td>
+        <td>eventsService should have a fetchEvents method</td>
+        <td>EventsService Test Suite &raquo; EventsService Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.003s</td>
+        <td>fetchEvents should return null if input queryParams is null or undefined</td>
+        <td>EventsService Test Suite &raquo; EventsService fetchEvents Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.019s</td>
+        <td>fetchEvents should return a success promise containing a list of events, if api returns success</td>
+        <td>EventsService Test Suite &raquo; EventsService fetchEvents Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>fetchEvents should return a failure promise, if api endpoint fails</td>
+        <td>EventsService Test Suite &raquo; EventsService fetchEvents Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>MapsService should have a getFormattedAddress method</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>MapsService should have a getReverseAddress method</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>MapsService should have a getInfoWindow method</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.01s</td>
+        <td>MapsService should have a getMap method</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>MapsService should have a plotUserLocation method</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>MapsService getFormattedAddress method should return the correspoding formatted_address for the inputted latitude and longitude</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>MapsService getReverseAddress method should return the correspoding latitude and longitude for input</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.009s</td>
+        <td>MapsService getFormattedAddress method should handle the error responses gracefully</td>
+        <td>MapsService Test Suite &raquo; MapsService Test Suite for methods</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>preferencesService should have a togglePreferences method</td>
+        <td>Preferences Service Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>preferencesService should have a updateUserPreferences method</td>
+        <td>Preferences Service Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>preferencesService should have a fetchCategories method</td>
+        <td>Preferences Service Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>updateUserPreferences should return null if user to update input is null or undefined</td>
+        <td>Preferences Service Test Suite &raquo; Update User Preferences Test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.017s</td>
+        <td>updateUserPreferences should return the updated user</td>
+        <td>Preferences Service Test Suite &raquo; Update User Preferences Test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.074s</td>
+        <td>updateUserPreferences should return error promise if the call to server failed</td>
+        <td>Preferences Service Test Suite &raquo; Update User Preferences Test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>fetchCategories should return the categories in DB if there are no server errors</td>
+        <td>Preferences Service Test Suite &raquo; Fetch Categories Test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>fetchCategories should return an error promise if there is a problem in fetching Categories from DB</td>
+        <td>Preferences Service Test Suite &raquo; Fetch Categories Test</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>uiServices should have a showMessageToUser method</td>
+        <td>UIServices Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>uiServices should have a spinnerOnPage method</td>
+        <td>UIServices Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>uiServices should have a takeUserConfirmation method</td>
+        <td>UIServices Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.009s</td>
+        <td>uiServices should have a showErrorToUser method</td>
+        <td>UIServices Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>alert function in jquery should be called with content same as input to function</td>
+        <td>UIServices Test Suite &raquo; showMessageToUser Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>confirm function in jquery should be called with content same as input to function as well as confirm and cancel callbacks</td>
+        <td>UIServices Test Suite &raquo; takeUserConfirmation Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>alert function in jquery should be called with content same as input to function</td>
+        <td>UIServices Test Suite &raquo; showErrorToUser Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>UIServices should show a spinner on page if input to spinnerOnPage is true</td>
+        <td>UIServices Test Suite &raquo; spinnerOnPage</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>UIServices should hide the spinner on page if input to spinnerOnPage is false</td>
+        <td>UIServices Test Suite &raquo; spinnerOnPage</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>UserSessionService should have a getDialog method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>UserSessionService should have a loginUsingEmail method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>UserSessionService should have a signUpUsingEmail method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>UserSessionService should have a logoutUser method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.017s</td>
+        <td>UserSessionService should have a maintainUserSession method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>UserSessionService should have a logInToFacebook method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>UserSessionService should have a fetchUserByFacebookId method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>UserSessionService should have a fetchPublicProfileFromFacebook method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>UserSessionService should have a updateFacebookToken method</td>
+        <td>UserSessionService Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>getDialog should return null when user action is not login or sign-up</td>
+        <td>UserSessionService Tests &raquo; UserSessionService GetDialog Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>getDialog should return login template and controller when user action is login</td>
+        <td>UserSessionService Tests &raquo; UserSessionService GetDialog Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>getDialog should return sign-up template and controller when user action is sign-up</td>
+        <td>UserSessionService Tests &raquo; UserSessionService GetDialog Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.008s</td>
+        <td>LoginUsingEmail should pass when there is a credentials match</td>
+        <td>UserSessionService Tests &raquo; UserSessionService LoginUsingEmail Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.007s</td>
+        <td>LoginUsingEmail should fail when there is a credentials mis-match</td>
+        <td>UserSessionService Tests &raquo; UserSessionService LoginUsingEmail Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.018s</td>
+        <td>LoginUsingEmail should return null if user to login is undefined or null</td>
+        <td>UserSessionService Tests &raquo; UserSessionService LoginUsingEmail Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.011s</td>
+        <td>SignUpUsingEmail should return the User Object on successful sign-up</td>
+        <td>UserSessionService Tests &raquo; UserSessionService SignUpUsingEmail Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.009s</td>
+        <td>LoginUsingEmail should return null if user to login is undefined or null</td>
+        <td>UserSessionService Tests &raquo; UserSessionService SignUpUsingEmail Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.008s</td>
+        <td>MaintainUserSession should return a user object if there is a user in session</td>
+        <td>UserSessionService Tests &raquo; UserSessionService MaintainUserSession Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.009s</td>
+        <td>MaintainUserSession should return a 401 Unauthorized if there is no user in session</td>
+        <td>UserSessionService Tests &raquo; UserSessionService MaintainUserSession Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>fetchUserByFacebookId should return null if userID is undefined or null</td>
+        <td>UserSessionService Tests &raquo; fetchUserByFacebookId Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>fetchUserByFacebookId should return success reponse if server returns a success response with user object</td>
+        <td>UserSessionService Tests &raquo; fetchUserByFacebookId Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>fetchUserByFacebookId should return error reponse if server returns a error response</td>
+        <td>UserSessionService Tests &raquo; fetchUserByFacebookId Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>updateFacebookToken should return null if either userID or newAccessToken is null or undefined</td>
+        <td>UserSessionService Tests &raquo; updateFacebookToken Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>updateFacebookToken should return success reponse if server returns a success response with updated user object</td>
+        <td>UserSessionService Tests &raquo; updateFacebookToken Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>updateFacebookToken should return error reponse if server returns a error response</td>
+        <td>UserSessionService Tests &raquo; updateFacebookToken Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>userSignUpErr should be false when scope of controller is initialized</td>
+        <td>OutdoorsySignUpController Tests &raquo; Initialization</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>validateSignUpDetails should return false when password is less than 5 characters long</td>
+        <td>OutdoorsySignUpController Tests &raquo; validateSignUpDetails Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>validateSignUpDetails should return false when password contains special characters</td>
+        <td>OutdoorsySignUpController Tests &raquo; validateSignUpDetails Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>validateSignUpDetails should return false when password satisfies all passoword requirements</td>
+        <td>OutdoorsySignUpController Tests &raquo; validateSignUpDetails Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.063s</td>
+        <td>signUpUser should set userSignUpErr to true if validation fails</td>
+        <td>OutdoorsySignUpController Tests &raquo; signUpUser Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.008s</td>
+        <td>user details on profile page should be in read only mode initially</td>
+        <td>OutdoorsyUserController Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>password on profile page should be in read only mode initially</td>
+        <td>OutdoorsyUserController Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>userInterests should be empty initially</td>
+        <td>OutdoorsyUserController Test Suite &raquo; Initialization Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.006s</td>
+        <td>fetchAllUserInterests should not set any user interests if current user or his preferences are null</td>
+        <td>OutdoorsyUserController Test Suite &raquo; fetchAllUserInterests Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>fetchAllUserInterests should not set any user interests if categories in db are null</td>
+        <td>OutdoorsyUserController Test Suite &raquo; fetchAllUserInterests Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.005s</td>
+        <td>fetchAllUserInterests should set user interests if current user or his preferences are not null</td>
+        <td>OutdoorsyUserController Test Suite &raquo; fetchAllUserInterests Tests</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.004s</td>
+        <td>editProfile should make the user profile details editable by setting readOnly property to false</td>
+        <td>OutdoorsyUserController Test Suite &raquo; editProfile Tests</td>
+      </tr>
+    </table>
+    <hr/>
+  </body>
+</html>

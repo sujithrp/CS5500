@@ -1,0 +1,64 @@
+<div class="signUp">
+    <div class="signUpHeader">
+        <h1>
+            <span><i class="fa fa-pencil-square-o fa-fw"></i>Sign-Up</span>
+        </h1>
+    </div>
+    <div>&nbsp;</div>
+    <p class="login"> 
+    	Already have an account? 
+        <button class="btn btn-primary" ng-click="openLoginDialog()"><span class="fa fa-sign-in"></span>&nbsp;Login</button>
+    </p> 
+
+    <div class="errorMsg" ng-show="userSignUpErr">
+        <p id="errorMsgLabel"></p>
+    </div>
+    
+    <form class="userSignUpDetails">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-pencil fa-fw"></i></span>
+                    <input maxlength="20" ng-model="User.firstName" class="form-control" type="text" id="userFirstName" required placeholder="First Name">
+                </div>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-pencil-square fa-fw"></i></span>
+                    <input maxlength="20" ng-model="User.lastName" class="form-control" type="text" id="userLastName" required placeholder="Last Name">
+                </div>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group margin-bottom-sm">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                    <input ng-model="User.email" class="form-control" type="email" placeholder="Email address" required>
+                </div>
+            </div>
+        </div>
+        <div>&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                    <input id="pwd" ng-model="User.password" class="form-control" type="password" id="userPwd" required placeholder="Choose Password (more than 5 characters long)">
+                </div>
+            </div>
+        </div>
+        <div class="signUpBtn">
+            <button class="btn btn-warning" ng-click="signUpUser(User);">
+                <span class="fa fa-pencil-square-o fa-2x"></span>&nbsp;Sign-Up
+            </button>
+        </div>
+    </form>
+    <div class="signUpWithFB">
+        <button class="btn btn-primary" ng-click="signUpWithFacebook();">
+            <span class="fa fa-facebook-square fa-2x"></span>&nbsp;Connect With Facebook
+        </button>   
+    </div>
+</div>

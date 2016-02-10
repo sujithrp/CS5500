@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Outdoorsy</title>
+		<!-- Required Essential CSS Files -->
+		<link rel="stylesheet" href="../essentials/bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="../essentials/font-awesome-4.4.0/css/font-awesome.css"/>
+		<link rel="stylesheet" href="../essentials/jquery-ui/jquery-ui.css"/>
+		<link rel="stylesheet" href="../essentials/ngdialog/ngDialog.css"/>
+		<link rel="stylesheet" href="../essentials/ngdialog/ngDialog-theme-default.css"/>
+		<link rel="stylesheet" href="../essentials/bootstrap/css/jquery.bootstrap-touchspin.css"/>
+		<link rel="stylesheet" href="../essentials/jquery-confirm/dist/jquery-confirm.min.css"/>
+
+
+		<!-- Required Essential Javascript Files -->
+
+		<script type="text/javascript" src="../essentials/angular/js/angular.min.js"></script>
+		<script type="text/javascript" src="../essentials/angular/js/angular-route.min.js"></script>
+		<script type="text/javascript" src="../essentials/angular/js/angular-mocks.js"></script>
+		<script type="text/javascript" src="../essentials/jquery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../essentials/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../essentials/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../essentials/ngdialog/ngDialog.js"></script>
+		<script type="text/javascript" src="../essentials/angular-google-maps/dist/angular-google-maps.min.js"></script>
+		<script type="text/javascript" src="../essentials/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+		<script type="text/javascript" src="../essentials/lodash/lodash.min.js"></script>
+		<script type="text/javascript" src = "https://maps.googleapis.com/maps/api/js?libraries=geometry,places&signed_in=true&v=3.exp"></script>
+		<script type="text/javascript" src="../essentials/geocomplete/jquery.geocomplete.min.js"></script>
+		<script type="text/javascript" src="../essentials/ngFacebook/ngFacebook.js"></script>
+		<script type="text/javascript" src="../essentials/bootstrap/js/jquery.bootstrap-touchspin.js"></script>
+		<script type="text/javascript" src="../essentials/jquery/jquery.bpopup.min.js"></script>
+		<script type="text/javascript" src="../essentials/jquery-confirm/dist/jquery-confirm.min.js"></script>
+		<script type="text/javascript" src="../essentials/ngStorage/angular-local-storage.min.js"></script>
+
+		<!-- include all Client JS Files -->
+		<script type="text/javascript" src="outdoorsyapp.js"></script>
+		<script type="text/javascript" src="../OutdoorsyHome/outdoorsyhomepage.js"></script>
+		<script type="text/javascript" src="../OutdoorsyMapUI/outdoorsymapui.js"></script>
+		<script type="text/javascript" src="../OutdoorsyLogin/outdoorsylogin.js"></script>
+		<script type="text/javascript" src="../OutdoorsySignUp/outdoorsysignup.js"></script>
+		<script type="text/javascript" src="../OutdoorsyEvents/outdoorsyevents.js"></script>
+		<script type="text/javascript" src="../OutdoorsyUser/outdoorsyuser.js"></script>
+		<script type="text/javascript" src="../OutdoorsyFAQ/outdoorsyfaq.js"></script>
+
+		<!-- Services -->
+		<script type="text/javascript" src="../OutdoorsyServices/UserSessionService.js"></script>
+		<script type="text/javascript" src="../OutdoorsyServices/EventsService.js"></script>
+		<script type="text/javascript" src="../OutdoorsyServices/MapsService.js"></script>
+		<script type="text/javascript" src="../OutdoorsyServices/UIServices.js"></script>
+		<script type="text/javascript" src="../OutdoorsyServices/PreferencesService.js"></script>
+
+		
+		
+
+		<!-- Include all CLient CSS Files -->
+		<link rel="stylesheet" href="outdoorsyapp.css" />
+		<link rel="stylesheet" href="../OutdoorsyHome/outdoorsyhomepage.css"/>
+		<link rel="stylesheet" href="../OutdoorsyMapUI/outdoorsymapui.css"/>
+		<link rel="stylesheet" href="../OutdoorsyLogin/outdoorsylogin.css"/>
+		<link rel="stylesheet" href="../OutdoorsySignUp/outdoorsysignup.css"/>
+		<link rel="stylesheet" href="../OutdoorsyEvents/outdoorsyevents.css"/>
+		<link rel="stylesheet" href="../OutdoorsyUser/outdoorsyuser.css"/>
+		<link rel="stylesheet" href="../OutdoorsyAboutUs/outdoorsyaboutus.css"/>
+		<link rel="stylesheet" href="../OutdoorsyFAQ/outdoorsyfaq.css"/>
+		
+
+		<!--Fav Icon-->
+		<link rel="shortcut icon" href="staticfiles/outdoorsyFavIcon.ico" />
+	</head>
+	<body ng-app="OutdoorsyApp">
+		<div ng-controller="OutdoorsyAppController">
+			<!-- Spinner Div: Set $rootScope.showLoading to true to make it visible -->
+			<div id="spinnerDiv" >
+				<img class="ajax-loader" src="staticfiles/ajax-loader.GIF"/>
+			</div>
+			
+
+			<!-- Preferences Window Only Shown to Registered User -->
+			<div id="userPreferences" class="well" ng-show="currentUser">
+				<h1><span class="fa fa-cog fa-spin"></span>&nbsp;&nbsp;Preferences</h1>
+				<div id="chooseSearchPreferences">
+					<div id="searchPrefHeader">
+						<h4><img src="staticfiles/search.png">&nbsp;Search Preferences</h4>
+					</div>
+					<div id="searchPrefOptions" class="row">
+						<div class="col-md-6">
+							<table class="table table-condensed table-responsive">
+								<thead>
+									<th class="info" colspan="3">Preferred Mode Of Transport</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<div class="col-sm-2 slideOne modeOpts">
+												<input type="checkbox" 
+													   id="driving" 
+													   value="DRIVING"
+													   ng-checked="currentUser.preferences.modeOfTransport.indexOf('DRIVING') > -1"
+													   ng-click="toggleModeOfTransport('DRIVING')" />
+												<label for="driving"></label>
+											</div>
+											<div class="col-sm-2 mode">
+												<label><i class="fa fa-car fa-2x"></i></label>
+											</div>
+										</td>
+										<td>
+											<div class="col-sm-2 slideOne modeOpts">
+												<input type="checkbox" 
+													   id="walking" 
+													   value="WALKING"
+													   ng-checked="currentUser.preferences.modeOfTransport.indexOf('WALKING') > -1"
+													   ng-click="toggleModeOfTransport('WALKING')" />
+												<label for="walking"></label>
+											</div>
+											<div class="col-sm-2 mode">
+												<label><i class="fa fa-male fa-2x"></i></label>
+											</div>
+										</td>
+										<td>
+											<div class="col-sm-2 slideOne modeOpts">
+												<input type="checkbox" 
+													   id="transit" 
+													   value="TRANSIT"
+													   ng-checked="currentUser.preferences.modeOfTransport.indexOf('TRANSIT') > -1"
+													   ng-click="toggleModeOfTransport('TRANSIT')" />
+												<label for="transit"></label>
+											</div>
+											<div class="col-sm-2 mode">
+												<label><i class="fa fa-subway fa-2x"></i></label>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-6">
+							<table class="table table-condensed table-responsive">
+								<thead>
+									<th class="info" >Search Radius</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<input id="searchWithin" 
+												   type="number" 
+												   name="searchPrefInp" 
+												   ng-model="currentUser.preferences.searchRadius">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div id="chooseSubCategories" ng-repeat="category in Categories">
+					<div id="categoryHeader">
+						<h4><img ng-src="staticfiles/{{category.categoryId}}.png">&nbsp;{{category.categoryName}}</h4>
+					</div>
+					<div id="subcategories" class="row">
+						<div class="col-md-3" ng-repeat="subCategory in category.subCategories">
+							<div class="row">
+								<div class="col-sm-3 slideOne">
+									<input type="checkbox" 
+										   id="{{subCategory.subCategoryId}}" 
+										   value="{{subCategory.subCategoryId}}"
+										   ng-checked="currentUser.preferences.subCategories.indexOf(subCategory.subCategoryId) > -1"
+										   ng-click="toggleSubCategorySelection(subCategory.subCategoryId)"/>
+									<label for="{{subCategory.subCategoryId}}"></label>
+								</div>
+								<div class="col-sm-9 subcategory">
+									<label>{{subCategory.subCategoryName}}</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="savePrefs">
+					<button class="btn btn-success" ng-click="savePrefs();">
+						<span class="fa fa-floppy-o"></span>&nbsp;&nbsp;Save Preferences
+					</button>
+					<button class="btn btn-danger" ng-click="confirmResetAllPreferences();">
+						<span class="fa fa-retweet"></span>&nbsp;&nbsp;Reset All
+					</button>
+				</div>
+			</div>
+
+			<!-- Fixed Navigation Bar Section -->
+			<nav id="navbar-custom-id" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	            <div class="navbar-header navbar-left">
+	                <a href="/home">
+	                    <img class="navbarAppName" src="staticfiles/navbarAppName.png">
+	                </a>
+	                <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span id="menuIconId" class="glyphicon glyphicon-menu-hamburger"></span>
+                    </button>
+	            </div>
+	            <div class="navbar-collapse collapse">
+	                <ul class="nav navbar-nav navbar-right navbar-right-custom">
+	                    <li ng-hide="currentUser">
+	                        <button class="btn btn-warning" ng-click="openDialog('signUp')">
+	                        	<span class="fa fa-pencil-square-o">&nbsp;&nbsp;</span>Sign-Up
+	                        </button>
+	                    </li>
+	                    <li ng-hide="currentUser">
+	                        <button class="btn btn-primary" ng-click="openDialog('login')">
+	                        	<span class="fa fa-sign-in">&nbsp;&nbsp;</span>Login
+	                        </button>
+	                    </li>
+	                    <li ng-hide="currentUser" id="desktopOps">
+							<div class="dropdown">
+								<button class="btn btn-danger dropdown-toggle" id="extraOpsBtn" type="button" data-toggle="dropdown">
+									<span class="fa fa-bars"></span>
+								</button>
+								<ul class="dropdown-menu userDropDownOptions">
+									<li ng-hide="currentUser">
+										<button class="btn btn-success" ng-click="aboutUs()">
+											<span class="fa fa-users"></span>&nbsp;&nbsp;Outdoorsy Team
+										</button>
+									</li>
+									<li ng-hide="currentUser">
+										<button class="btn btn-info" ng-click="openFAQ()">
+											<span class="fa fa-book fa-fw"></span>&nbsp;Outdoorsy Help
+										</button>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li ng-hide="currentUser" id="nonDesktop">
+							<button class="btn btn-success" ng-click="aboutUs()">
+								<span class="fa fa-users"></span>&nbsp;&nbsp;Outdoorsy Team
+							</button>
+						</li>
+						<li ng-hide="currentUser" id="nonDesktop">
+							<button class="btn btn-info" ng-click="openFAQ()">
+								<span class="fa fa-book fa-fw"></span>&nbsp;Outdoorsy Help
+							</button>
+						</li>
+	                    <div id="desktopView" ng-show="currentUser">
+		                    <li class="dropdown">
+		                	    <button class="btn btn-primary" ng-click="openUserProfile()">
+		                	    	<span ng-hide="currentUser.profilePic" class="fa fa-user fa-fw"></span>
+		                	    	<img class="profilePic" ng-src="{{currentUser.profilePic}}" ng-show="currentUser.profilePic"/>
+		                	    	&nbsp;{{currentUser.firstName}} {{currentUser.lastName}} 
+		                	    </button>
+					            <button class="btn btn-primary dropdown-toggle dropdownMenuClass" data-toggle="dropdown">
+	    							<span class="fa fa-caret-down"></span>
+	    						</button>
+					          	<ul class="dropdown-menu userDropDownOptions">
+					          		<li>
+				            			<button class="btn btn-warning" ng-click="openPreferences()">
+				            				<span class="fa fa-cog fa-spin"></span>&nbsp;&nbsp;Preferences
+				            			</button>
+					            	</li>
+					            	<li>
+				            			<button class="btn btn-info" ng-click="openFAQ()">
+				            				<span class="fa fa-book fa-fw"></span>&nbsp;&nbsp;Outdoorsy Help
+				            			</button>
+					            	</li>
+					            	<li>
+				            			<button class="btn btn-success" ng-click="aboutUs()">
+				            				<span class="fa fa-users"></span>&nbsp;&nbsp;Outdoorsy Team
+				            			</button>
+					            	</li>
+					            	<li>
+				            			<button class="btn btn-danger" ng-click="logoutUser()">
+				            				<span class="fa fa-power-off"></span>&nbsp;&nbsp;Logout
+				            			</button>
+					            	</li>
+					          	</ul>
+					        </li>
+				        </div>
+				        <div id="nonDesktopView" ng-show="currentUser">
+				        	<li>
+		                	    <button class="btn btn-primary">
+		                	    	<span class="fa fa-user fa-fw"></span>&nbsp;{{currentUser.firstName}} {{currentUser.lastName}} 
+		                	    </button>
+	                	    </li>
+	                	    <li>
+		            			<button class="btn btn-warning" ng-click="openPreferences()">
+		            				<span class="fa fa-cog fa-spin"></span>&nbsp;&nbsp;Preferences
+		            			</button>
+			            	</li>
+			            	<li>
+		            			<button class="btn btn-success" ng-click="aboutUs()">
+		            				<span class="fa fa-users"></span>&nbsp;&nbsp;Outdoorsy Team
+		            			</button>
+			            	</li>		
+			            	<li>
+		            			<button class="btn btn-info" ng-click="openFAQ()">
+		            				<span class="fa fa-book fa-fw"></span>&nbsp;&nbsp;Outdoorsy Help
+		            			</button>
+			            	</li>	            	
+			            	<li>
+		            			<button class="btn btn-danger" ng-click="logoutUser()">
+		            				<span class="fa fa-power-off"></span>&nbsp;&nbsp;Logout
+		            			</button>
+		            		</li>
+				        </div>
+	                </ul>
+	            </div>
+            </nav>
+
+			<!-- Fixed Quick Links Section -->
+
+			<!-- Displaying Current View -->
+			<div ng-view class="all-views" id="allViews">
+				
+			</div>
+		</div>
+	</body>
+</html>

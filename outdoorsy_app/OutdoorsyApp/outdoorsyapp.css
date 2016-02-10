@@ -1,0 +1,313 @@
+body{
+	background: url('staticfiles/background.jpg');
+}
+
+/* Remove Default Number Spinner */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+} 
+
+
+input[type=checkbox]{
+	visibility: hidden;
+}
+
+.slideOne {
+	width: 50px;
+	height: 10px;
+	background: #333;
+	margin: 15px auto;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.slideOne label {
+	display: block;
+	width: 16px;
+	height: 16px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	-ms-transition: all .4s ease;
+	transition: all .4s ease;
+	cursor: pointer;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+	background: #fcfff4;
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.slideOne input[type=checkbox]:checked + label {
+	left: 37px;
+	background: #009900;
+}
+
+/*End Of Custom Checkbox*/
+
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover{
+	color:#000033;
+}
+
+#navbar-custom-id{
+	opacity: 0.9;
+	padding-right: 20px;
+	border-radius: 0px  0px 30px 30px;
+}
+
+.navbar-right-custom > li{
+	padding:5px;
+}
+
+.navbar-right-custom button{
+	font-size: 14px;
+	color: #fff;
+	font-family: Helvetica;
+	border-radius: 0px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+#menuIconId{
+	width:20px;
+	font-size: 17px;
+}
+
+#desktopView{
+	display: block;
+	margin-top: 5px;
+}
+
+#desktopView button{
+	border-radius: 0px;
+	margin-top: 5px;
+}
+
+#nonDesktopView{
+	display: none;
+	width: 100%;
+}
+
+#nonDesktopView > li > button{	
+	width: 80%;
+	margin-top: 5px;
+	/*float: right;*/
+	border-radius: 0px;
+}
+
+#nonDesktopView > li > button > span{	
+	float: left;
+}
+
+
+.userDropDownOptions > li > button{
+	width: 100%;
+	margin-top: 3px;
+	font-family: Helvetica;
+	font-size: 14px;
+	border-radius: 0px;
+	font-weight: bold;
+}
+
+.userDropDownOptions > li > button > span{
+	float: left;
+}
+
+.userDropDownOptions{
+	width:100%;
+	background-color: transparent;
+	border:0px;
+}
+
+#spinnerDiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:#ccccff;
+    opacity: 0.5;
+}
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;
+    height: 100px;
+    width:100px; 
+    opacity: 1;    
+}
+
+.navbarAppName{
+	margin-top: 5px;
+	height: 45px;
+}
+
+
+/*--------------------User Preferences------------------*/
+
+#userPreferences{
+	display: none;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    min-width:400px;
+    min-height: 180px;
+    width: 80%;
+    border-radius: 80px;
+}
+
+#userPreferences > h1{
+	text-align: center;
+	font-family: Helvetica;
+    margin: 0px;
+}
+
+#categoryHeader, #searchPrefHeader{
+	padding-top: 5px;
+	border-bottom: 1px solid grey;
+}
+
+#categoryHeader > h4, #searchPrefHeader > h4{
+	font-family: Helvetica;
+	font-weight: bold;
+	opacity: 0.7;
+}
+
+#subcategories{
+	margin: 10px;
+}
+
+#subcategories label{
+	font-family: Helvetica;
+	font-style: italic;
+}
+
+.subcategory > label, .mode > label{
+	margin: 10px auto;
+	text-align: center;
+	float:left;
+	font-size: 11px;
+}
+
+.savePrefs{ 
+	margin-top: 10px;
+	text-align: center;
+}
+
+.savePrefs > button{
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+#categoryHeader img, #searchPrefHeader img{
+	height: 40px;
+	width: 40px;
+}
+
+#searchPrefOptions{
+	margin: 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.modeOpts{
+	margin-left: 5px;
+}
+
+#searchPrefOptions  th{
+	font-family: Helvetica;
+	font-weight: bold;
+	text-align: center;
+	opacity: 0.5;
+}
+
+#extraOpsBtn{
+	border-radius: 20%;
+	opacity: 1;
+}
+
+#nonDesktop{
+	display: none;
+}
+
+#desktopOps{
+	display: block;
+}
+
+@media screen and (max-width: 765px){
+	#navbar-custom-id{
+		padding-right: 5px;
+	}
+
+	.navbar-right-custom{
+		text-align: center;
+	}
+
+	.navbar-right-custom > li > button{
+		width: 80%;
+	}
+	.dropdownMenuClass{
+		margin-top: 5px;
+	}
+
+	#desktopView{
+		display: none;
+	}
+
+	#nonDesktopView{
+		margin-top: 5px;
+		display: block;
+	}
+
+	.navbarAppName{
+		margin-top: 10px;
+		height: 30px;
+	}
+
+	#nonDesktop{
+		display: block;
+	}
+
+	#desktopOps{
+		display: none;
+	}
+}
+
+
+.profilePic{
+	height: 20px;
+	width: 20px;
+}

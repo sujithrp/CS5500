@@ -1,0 +1,110 @@
+<div class="container userProfile">
+
+	<div class="row">
+		<div class="col-md-7 well myprofile">
+			<h3><span class="fa fa-user"></span>
+				&nbsp;{{currentUser.firstName}} {{currentUser.lastName}}
+			</h3>
+			<div class="userPicture">
+				<img ng-show="currentUser.profilePic" ng-src="{{currentUser.profilePic}}"/>
+			</div>
+			<form class="userSignUpDetails">
+		        <div class="row">
+		            <div class="col-md-12">
+		                <div class="input-group">
+		                    <span class="input-group-addon" title="First Name"><i class="fa fa-pencil fa-fw"></i></span>
+		                    <input maxlength="20" ng-disabled="readOnlyMode" ng-model="currentUser.firstName" class="form-control" type="text" />
+		                </div>
+		            </div>
+		        </div>
+		        <div>&nbsp;</div>
+		        <div class="row">
+		            <div class="col-md-12">
+		                <div class="input-group">
+		                    <span class="input-group-addon" title="Last Name"><i class="fa fa-pencil-square fa-fw"></i></span>
+		                    <input maxlength="20" ng-disabled="readOnlyMode" ng-model="currentUser.lastName" class="form-control" type="text"/>
+		                </div>
+		            </div>
+		        </div>
+		        <div>&nbsp;</div>
+		        <div class="row">
+		            <div class="col-md-12">
+		                <div class="input-group margin-bottom-sm">
+		                    <span class="input-group-addon" title="Email"><i class="fa fa-envelope-o fa-fw"></i></span>
+		                    <input ng-disabled="true" ng-model="currentUser.email" class="form-control" type="email"/>
+		                </div>
+		            </div>
+		        </div>
+		        <div>&nbsp;</div>
+		        <div class="row" ng-show="passwordEditMode">
+		        	<div ng-show = "passwordError">
+		            	<p id="pwdErr">{{passwordError}}</p>
+		            </div>
+		            <div class="col-md-12">
+		                <div class="input-group margin-bottom-sm">
+		                    <span class="input-group-addon" title="Password"><i class="fa fa-key fa-fw"></i></span>
+		                    <input id="pwdInp" ng-model="currentUser.password" class="form-control" type="password"/>
+		                </div>
+		            </div>
+		            
+		        </div>
+		        <div>&nbsp;</div>
+		        <div class="saveAndEditButtons">
+		        	<button ng-show="readOnlyMode" class="btn btn-primary" ng-click="editProfile();">
+		        		<span class="fa fa-pencil-square-o"></span>&nbsp;Edit Profile
+		        	</button>
+		        	<button ng-hide="readOnlyMode" class="btn btn-success" ng-click="saveProfile(currentUser);">
+		        		<span class="fa fa-floppy-o"></span>&nbsp;Save Profile
+		        	</button>
+		        	&nbsp;&nbsp;
+		        	<button ng-show="currentUser.facebookId" class="btn btn-danger" ng-click="deleteProfile();">
+		        		<span class="fa fa-facebook-square"></span>&nbsp;Disconnect Facebook
+		        	</button>
+		        	&nbsp;&nbsp;
+		        	<button ng-hide="currentUser.facebookId" class="btn btn-danger" ng-click="deleteProfile();">
+		        		<span class="fa fa-trash"></span>&nbsp;Delete Profile
+		        	</button>
+		        	&nbsp;&nbsp;&nbsp;&nbsp;
+		        	<button ng-hide="currentUser.facebookId" 
+		        			class="btn btn-info"
+		        			id="changePasswordButton"
+		        			ng-click="changePassword(currentUser.password);">
+		        		<span class="fa fa-key"></span>&nbsp;{{changePwdBtnText}}
+		        	</button>
+		        </div>
+		    </form>
+		</div>
+
+		<div class="col-md-1">&nbsp;</div>
+
+		<div class="col-md-4 well myinterests">
+			<h3><span class="fa fa-cog fa-spin"></span>&nbsp;My Interests</h3>
+
+			<table class="table table-condensed">
+				<thead>
+					<th>&nbsp;</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="interest in userInterests" class="userInterests">
+						<td>
+							<h4>{{interest.categoryName}}</h4>
+							
+							<ul class="interestNames" ng-repeat="interestName in interest.interests">
+								<li>
+									{{interestName}}
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr ng-show="userInterests.length == 0">
+						<td class="noPrefs">You don't have any preferences set</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<button class="btn btn-primary" ng-click="openPreferences();">
+        		<span class="fa fa-cog"></span>&nbsp;Edit Preferences
+        	</button>
+		</div>
+	</div>
+</div>

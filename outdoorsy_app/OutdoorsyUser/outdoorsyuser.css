@@ -1,0 +1,71 @@
+.userProfile{
+    margin-top:70px;
+    border-radius: 50px;
+}
+
+.myprofile, .myinterests{
+	text-align: center;
+	border-radius: 20px; 
+}
+
+.noPrefs{
+	color:orange;
+	font-style: Helvetica;
+	font-weight: bold;
+}
+
+.userInterests h4{
+	text-align: left;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.interestNames{
+	list-style-image: url('../OutdoorsyUser/staticfiles/star.png');
+}
+
+.interestNames li{
+	text-align: left;
+	font-family: Helvetica;	
+}
+
+.userPicture>img{
+	margin: 20px;
+	width: 40%;
+	height: 40%;
+	border-style: outset;
+	border-radius: 50px;
+	border : 1px dashed orange;
+}
+
+.uploadPic{
+	margin: 20px auto;
+	border-style: outset;
+	border-radius: 50px;
+	border : 2px dashed orange;
+	width: 40%;
+	height: 200px;
+}
+
+.uploadPic img{
+	margin: 30px;
+	height: 120px;
+}
+
+.uploadPic img:hover{
+	cursor: pointer;
+}
+
+#pwdErr{
+	color: red;
+	font-size: 12px;
+	font-family: Helvetica;
+}
+
+@media screen and (max-width: 765px){
+
+	.uploadPic{
+		width: 80%;
+	}
+
+}

@@ -1,0 +1,29 @@
+.login > h1{
+	text-align: center;
+	font-family: Helvetica;
+}
+
+.signUp, .loginWithFB , .loginBtn{
+	text-align: center;
+	font-family: Helvetica;
+}
+
+.signUp > button{
+	font-weight: bold
+}
+
+.userLoginDetails > label, input{
+	font-family: Helvetica;	
+}
+
+.loginBtn > button, .loginWithFB > button{
+	width: 100%;
+	border-radius: 0px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.loginBtn > button > span, .loginWithFB > button > span{
+	float: left;
+}
+

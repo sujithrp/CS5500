@@ -1,0 +1,222 @@
+.eventsDetails{
+    margin-top:70px;
+    border-radius: 50px;
+}
+
+.eventDetailsTable{
+    padding: 40px;
+}
+
+.eventName{
+    font-family: Helvetica;
+    font-size:30px;
+    color: #000;
+    font-weight:bold;
+}
+
+#eventImage{
+    text-align: center;
+
+}
+
+.showOnMaps, .ticketInfo, .eventDesc{
+    border-radius: 50px;
+}
+
+.eventLogo img{
+    height: 300px;
+    width: 300px;
+    opacity: 0.9;
+    float: right;
+    -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.eventLogo img:hover {
+    opacity: 1;
+}
+
+
+.eventDetailsTable th{
+    opacity: 0.8;
+}
+
+
+.eventButtons button{
+    font-size: 20px;
+    width:100%;
+    font-weight: bold;
+}
+
+.eventLikes span{
+    cursor:pointer;
+    margin-bottom: 20px;
+}
+
+#likeBtn{
+    color: green;
+}
+
+#unLikeBtn{
+    color:red;
+    margin-left: 20px;
+}
+
+.eventDescription h4,{
+    font-weight: bold;
+}
+
+.eventDescription p{
+    text-align: center;
+}
+
+#orgDesc{
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*.ticketInfo, .eventDesc, .showOnMaps{
+    opacity: 0.8;
+}*/
+
+.ticketInfo h4, .eventDesc h4, .showOnMaps h4, .showOnMaps, .eventOrg h4, .commentsSection h4{
+    font-weight: bold;
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.ticketHeaders th{
+    font-size: 17px;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+.bookBuyBtn{
+    text-align: center;
+}
+
+.bookBuyBtn a{
+    font-family: Helvetica;
+    font-weight: bold;
+    width: 50%;
+}
+
+#eventOnMap {
+    height: 350px;
+}
+
+.bookBuyBtn span{
+    float: left;
+}
+
+.modes button{
+    width: 100%;
+}
+
+.showOnMaps h5{
+    opacity: 0.6;
+}
+
+#eventOnMap{
+    margin-top:10px;
+    border:2px solid #000;
+    border-radius: 10px;
+}
+
+.noTicketInfo h5{
+    text-align: center;
+    font-family: Helvetica;
+    opacity: 0.7;
+}
+
+.eventOrg{
+    text-align: center;
+    border-radius: 30px;
+}
+
+.contactOrg{
+    margin-top: 20px;
+}
+
+.commentsSection {
+    border-radius: 30px;
+}
+
+.commentsTable{
+    width: 90%;
+    margin: auto;
+}
+
+.commentsTable button {
+    float: right;
+}
+
+.displayComments{
+    margin-top: 20px;
+    border-radius: 30px;
+    width: auto;
+}
+
+#commentBy{
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+#commentText{
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.noCommentLabel{
+    margin-top: 10px;
+    opacity: 0.7;
+    text-align: center;
+    font-weight: bold;
+}
+
+.commentsInputSection{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.notLoggedInMessage{
+    text-align: center;
+}
+
+.notLoggedInMessage p{
+    font-family: Helvetica;
+    font-size: 15px;
+    color: orange;
+}
+
+.userRatingLikeIcon{
+    cursor: default;
+    color:#FFD700;
+}
+
+.userRatingDislikeIcon{
+    cursor: default;
+    color: red;
+}
+
+.fbShare {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fbShare button{
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.timings{
+    width: 70%;
+}
+
+.timings th,td{
+    text-align: center;
+}

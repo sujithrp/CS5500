@@ -1,0 +1,90 @@
+.homePageContainer{
+	position: relative;
+	height: 45vw;
+	width: 100%;
+}
+
+
+.autoPlay > video{
+	position: absolute;
+	width:100%;
+}
+
+.getStarted{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	top:30%;
+	bottom:30%;
+}
+
+.appName > img{
+	height: 150px;
+}
+
+.appSlogan > label{
+	font-size: 17px;
+	font-family: Helvetica;
+	color:#fff;
+	text-shadow: 20px 0px 20px rgba(0, 0, 0, 0.75);
+}
+
+.locationInput{
+	margin:auto;
+	width: 60%;
+}
+
+.add-on > input{
+	font-family: Helvetica;
+	float: right;
+	font-weight: bold;
+}
+
+.getStartedBtn {
+	color: #fff;
+	font-family: Helvetica;
+	font-weight: bold;
+}
+
+.add-on .input-group-btn > .btn {
+	border-left-width:0;left:-2px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+@media screen and (max-width: 992px){
+	.appName > img{
+		height: 120px;
+	}
+	.appSlogan > label{
+		font-size: 15px;	
+	}
+	.getStartedBtn{
+		font-size: 15px;
+		width: 100%;
+		margin-top: 10px;
+	}
+	.autoPlay{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.appName > img{
+		height: 80px;
+	}
+	.appSlogan > label{
+		font-size: 13px;	
+	}
+	.getStartedBtn{
+		font-size: 13px;
+	}
+	.locationInput{
+		margin:auto;
+		width: 100%;
+	}
+	.getStarted{
+		margin-top: 80px;
+	}
+}
